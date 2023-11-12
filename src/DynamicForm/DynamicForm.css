@@ -1,0 +1,117 @@
+.dynamic-form {
+  max-width: 540px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Softer shadow */
+  background-color: #ffffff;
+  font-family: 'Open Sans', sans-serif; /* Updated font family */
+}
+
+.form-group {
+  margin-bottom: 20px; /* Slightly more space between fields */
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 1.1rem; /* Larger font size for labels */
+  margin-bottom: 0.5rem;
+  color: #333; /* Slightly darker for better contrast */
+  font-weight: 600; /* Bolder labels */
+}
+
+.form-group .form-input {
+  padding: 12px; /* More padding for input fields */
+  border: 2px solid #e0e0e0; /* Softer border color */
+  border-radius: 6px; /* Slightly more rounded corners */
+  font-size: 1rem; /* Larger font size for inputs */
+  margin-bottom: 10px; /* Consistent spacing for error message */
+}
+
+/* Specific styles for different input types */
+.form-group input[type='checkbox'],
+.form-group input[type='radio'] {
+  margin-right: 10px;
+}
+
+.form-group input[type='checkbox'] + label,
+.form-group input[type='radio'] + label {
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.form-group .error-message {
+  color: #d32f2f; /* Updated error color */
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.submit-button {
+  padding: 12px 20px; /* More padding for a larger button */
+  background-color: #008CBA; /* Updated button color */
+  color: white;
+  border: none;
+  border-radius: 6px; /* More rounded corners for the button */
+  cursor: pointer;
+  font-size: 1.1rem; /* Larger font size for button text */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for background and shadow */
+  align-self: flex-start;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.submit-button:hover {
+  background-color: #006c8c; /* Darker shade on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slightly larger shadow on hover for a "lifting" effect */
+}
+
+/* Style for the select element */
+.select-input {
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  background-color: white;
+  font-size: 1rem;
+}
+
+/* Adjust layout for radio buttons and checkboxes */
+.radio-group,
+.checkbox-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.radio-group label,
+.checkbox-group label {
+  margin-right: 20px; /* Space out the radio buttons/checkboxes */
+}
+
+/* Focus styles for interactive elements */
+.form-input:focus,
+.select-input:focus,
+.submit-button:focus {
+  border-color: #008cba; /* Highlight color for focus */
+  outline: none; /* Remove default focus outline */
+}
+
+/* Placeholder styling */
+::placeholder {
+  color: #aaaaaa; /* Lighter text for placeholders */
+  opacity: 1; /* Make placeholder fully visible */
+}
+
+@media (max-width: 768px) {
+  .dynamic-form {
+    padding: 15px; /* Slightly less padding on smaller screens */
+    margin: 20px auto; /* Less margin on smaller screens */
+  }
+
+  .form-group label {
+    font-size: 1rem; /* Slightly smaller labels on smaller screens */
+  }
+
+  .submit-button {
+    align-self: stretch; /* Stretch button to full width on smaller screens */
+  }
+}
