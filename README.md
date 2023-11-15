@@ -1,70 +1,77 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Dynamic Form Library
 
-## Available Scripts
+Dynamic Form is a React component library designed to create dynamic forms based on a JSON schema with integrated validation using Yup.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Dynamic Field Generation**: Automatically generate form fields from a JSON schema.
+- **Yup Validation**: Leverage Yup for powerful schema validation to ensure data integrity.
+- **Custom Components**: Easily integrate custom React components within your forms.
+- **Styling Flexibility**: Apply custom styles to individual form elements for a personalized look and feel.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Install Dynamic Form with npm:
 
-### `npm run build`
+```bash
+npm install Dynamic-form
+```
+or yarn 
+```bash
+  yarn add Dynamic-form
+```
+## Usage:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```javascript
+import React from 'react';
+import DynamicForm from 'your-library-name';
+import * as Yup from 'yup';
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+// Define your form schema
+const formSchema = [
+  {
+    name: 'name',
+    label: 'Name',
+    type: 'text',
+    validation: Yup.string().required('Name is required'),
+    initialValue: '',
+  },
+  // Add more fields as needed
+];
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+// Component using DynamicForm
+const App = () => {
+  const handleSubmit = (formData) => {
+    // Handle form data submission
+    console.log('Form Data:', formData);
+  };
 
-### `npm run eject`
+  return (
+    <DynamicForm
+      schema={formSchema}
+      onSubmit={handleSubmit}
+      // Add any additional props here
+    />
+  );
+};
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+export default App;
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Form Schema
+The formSchema prop should be an array of objects where each object represents a field in the form and includes properties like name, label, type, validation, and initialValue.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Custom styling
 
-## Learn More
+You can customize styles by passing style objects to these props:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* **formStyle**
+* **formGroupStyle**
+* **labelStyle**
+* **inputStyle**
+* **buttonStyle**
+* **errorStyle**
